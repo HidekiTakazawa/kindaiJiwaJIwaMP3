@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      cursor: pointer;
+      color: blue;
+    }
+
+    li:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>MP3 Player</h1>
+
+  <label>
+    <input type="checkbox" id="loopControl"> 繰り返し再生
+  </label>
+  <audio id="audioPlayer" controls loop></audio>
+
+  <ul id="fileList"></ul>
+  <script src="script.js"></script>
+</body>
+
+</html>
