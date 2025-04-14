@@ -197,16 +197,18 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const fileList = document.getElementById("fileList");
-  // const audioPlayer = document.getElementById("audioPlayer");
-  document.addEventListener("DOMContentLoaded", () => {
-    const audioPlayer = document.getElementById("audioPlayer");
-    const loopControl = document.getElementById("loopControl");
+  const audioPlayer = document.getElementById("audioPlayer");
+  const mp3File = document.getElementById("mp3File");
+  mp3File.textContent = ""; // 最初のファイル名を表示
+//   document.addEventListener("DOMContentLoaded", () => {
+//     const audioPlayer = document.getElementById("audioPlayer");
+//     const loopControl = document.getElementById("loopControl");
 
-    // チェックボックスの変更を監視し、ループ設定を切り替える
-    loopControl.addEventListener("change", () => {
-        audioPlayer.loop = loopControl.checked;
-    });
-});
+//     // チェックボックスの変更を監視し、ループ設定を切り替える
+//     loopControl.addEventListener("change", () => {
+//         audioPlayer.loop = loopControl.checked;
+//     });
+// });
 
 
   files.forEach(file => {
@@ -214,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
       listItem.textContent = file;
       listItem.addEventListener("click", () => {
           audioPlayer.src = `mp3Files/${file}`;
+          mp3File.textContent = file; // クリックしたファイル名を表示
           audioPlayer.play();
       });
       fileList.appendChild(listItem);

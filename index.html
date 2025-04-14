@@ -4,12 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MP3 Player</title>
+  <title>じわじわ金大mp3再生</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
       text-align: center;
+    }
+
+    .header {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 10;
+      background-color: lemonchiffon;
+      width: 100%;
+
+
+    }
+
+    .header h3 {
+      margin: 0;
+      padding-left: 10px;
+      padding-top: 10px;
+      /* padding: 10px; */
+    }
+
+    .header p {
+      margin: 0 10px;
+      font-size: 10px;
+      color: #555;
     }
 
     ul {
@@ -24,20 +48,26 @@
     }
 
     li:hover {
-      text-decoration: underline;
+      font-weight: bold;
+      color: black;
     }
   </style>
 </head>
 
 <body>
-  <h1>MP3 Player</h1>
+  <div class="header">
+    <h3>じわじわ金大mp3再生<p id="mp3File"></p></h3>
 
-  <label>
-    <input type="checkbox" id="loopControl"> 繰り返し再生
-  </label>
-  <audio id="audioPlayer" controls loop></audio>
 
-  <ul id="fileList"></ul>
+    
+    <audio id="audioPlayer" controls loop></audio>
+  </div>
+  <div class="content" style="margin-top: 130px;">
+   
+    
+   
+    <ul id="fileList"></ul>
+  </div>
   <script src="script.js"></script>
 </body>
 
